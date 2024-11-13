@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3</title>
+</head>
+<body>
+    <p id="demo"></p>
+   
+    <script>
+    //This line declares a JavaScript variable text and initializes it as an empty string. This variable will be used to store the text content that will be displayed in the paragraph.
+      let text = "";
+    
+      for (let i = 0; i < 5; i++) {
+        // value of i+1 (so it counts from 1 to 5 since i starts from 0)
+        // a line break (<br>) to the text variable, so the content display one line at a time.
+      text += "The number is " + (i+1) + "<br>";
+    }
+    
+    document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
