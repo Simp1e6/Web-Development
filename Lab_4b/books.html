@@ -1,0 +1,38 @@
+<!--Using jQuery and Fetch API, by interacting with books.json-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Books</h1>
+    
+    <p id="bookTitle"></p>
+    <p id="bookAuthor"></p>
+    <p id="bookGenres"></p>
+
+    <script>
+        // Fetching JSON data
+        fetch('books.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);  // Debug: Check if data is loaded correctly
+
+                // (a) Display the title of the first book
+                $('#bookTitle').text('Title of the first book: ' + data.books[0].title);
+
+                // (b) Display the author of the second book
+                $('#bookAuthor').text('Author of the second book: ' + data.books[1].author);
+
+                // (c) Display the genres of all books
+                const genres = data.books.flatMap(book => book.genres);
+                $('#bookGenres').text('Genres of all books: ' + genres.join(', '));
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+</body>
+</html>

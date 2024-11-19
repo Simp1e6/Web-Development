@@ -1,0 +1,48 @@
+<!--Using Inline JavaScript and Hardcoded JSON, no interaction with books.json-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+
+    <p>You can display the details through Inspect – Console on your browser</p>
+    <script>
+
+        const booksData = {
+                            "books": 
+                            [
+                                {
+                                    "title": "The Great Gatsby",
+                                    "author": "F. Scott Fitzgerald",
+                                    "publicationYear": 1925,
+                                    "genres": ["Fiction", "Classics"]
+                                },
+                                {
+                                    "title": "To Kill a Mockingbird",
+                                    "author": "Harper Lee",
+                                    "publicationYear": 1960,
+                                    "genres": ["Fiction", "Coming-of-Age"]
+                                }
+                            ]
+                        };
+            
+            // (a) Display the title of the first book
+            console.log("The title of the first book: " + booksData.books[0].title);
+
+            // (b) Display the author of the second book
+            console.log("The author of the second book: " + booksData.books[1].author);
+
+            // (c) Display the genres of all books
+            // Loop through the books and display the genres
+            console.log("Genres of all books:");
+            booksData.books.forEach(books => {
+                console.log(books.genres);
+            });
+
+    </script>
+</body>
+</html>
